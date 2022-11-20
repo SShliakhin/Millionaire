@@ -12,12 +12,10 @@ final class ExtendedQuestionFactory: QuestionFactoryProtocol {
     
     weak var delegate: QuestionFactoryDelegate?
     
-    init(delegate: QuestionFactoryDelegate?) {
-        self.delegate = delegate
-        questions = loadMockData()
-    }
+
     
     func requestNextQuestion(level: Int) {
+        questions = loadMockData()
         let question = questions.filter { $0.level == level }.randomElement()
         delegate?.didRecieveNextQuestion(self, question: question)
     }
@@ -37,12 +35,12 @@ extension ExtendedQuestionFactory {
                 ],
                 l: 1),
             Question(
-                q: "Что сочиняют спецагентам, отправляя их на задание?",
+                q: "Как называют микроавтобусы, совершающие поездки по определённым маршрутам?",
                 a: [
-                    (answer: "Сказку", isCorrect: false),
-                    (answer: "Былину", isCorrect: false),
-                    (answer: "Легенду", isCorrect: true),
-                    (answer: "Притчу", isCorrect: false)
+                    (answer: "Рейсовые", isCorrect: false),
+                    (answer: "Путёвые", isCorrect: false),
+                    (answer: "Маршрутные", isCorrect: true),
+                    (answer: "Курсовые", isCorrect: false)
                 ],
                 l: 1),
             Question(
@@ -73,12 +71,12 @@ extension ExtendedQuestionFactory {
                 ],
                 l: 2),
             Question(
-                q: "В какой стране находится город Антверпен?",
+                q: "Какой специалист занимается изучением неопознанных летающих объектов?",
                 a: [
-                    (answer: "Бельгия", isCorrect: true),
-                    (answer: "Голландия", isCorrect: false),
-                    (answer: "Франция", isCorrect: false),
-                    (answer: "Германия", isCorrect: false)
+                    (answer: "Уфолог", isCorrect: true),
+                    (answer: "Кинолог", isCorrect: false),
+                    (answer: "Проктолог", isCorrect: false),
+                    (answer: "Психиатр", isCorrect: false)
                 ],
                 l: 2),
             Question(
@@ -95,7 +93,7 @@ extension ExtendedQuestionFactory {
                 a: [
                     (answer: "На венике", isCorrect: false),
                     (answer: "На швабре", isCorrect: false),
-                    (answer: "На метле+", isCorrect: true),
+                    (answer: "На метле", isCorrect: true),
                     (answer: "На пылесосе «Ракета»", isCorrect: false)
                 ],
                 l: 3),
@@ -149,7 +147,7 @@ extension ExtendedQuestionFactory {
                 a: [
                     (answer: "Интервенция", isCorrect: false),
                     (answer: "Инаугурация", isCorrect: true),
-                    (answer: "Инаугурация", isCorrect: false),
+                    (answer: "Интеграция", isCorrect: false),
                     (answer: "Импичмент", isCorrect: false)
                 ],
                 l: 5),
@@ -163,19 +161,19 @@ extension ExtendedQuestionFactory {
                 ],
                 l: 5),
             Question(
-                q: "В какой из этих игр используется мяч наибольшей величины?",
+                q: "Что такое десница?",
                 a: [
-                    (answer: "Баскетбол", isCorrect: true),
-                    (answer: "Футбол", isCorrect: false),
-                    (answer: "Волейбол", isCorrect: false),
-                    (answer: "Водное поло", isCorrect: false)
+                    (answer: "Рука", isCorrect: true),
+                    (answer: "Шея", isCorrect: false),
+                    (answer: "Глаз", isCorrect: false),
+                    (answer: "Бровь", isCorrect: false)
                 ],
                 l: 6),
             Question(
                 q: "Какое зодиакальное созвездие на небе самое большое?",
                 a: [
                     (answer: "Стрелец", isCorrect: false),
-                    (answer: "Дева+", isCorrect: true),
+                    (answer: "Дева", isCorrect: true),
                     (answer: "Водолей", isCorrect: false),
                     (answer: "Козерог", isCorrect: false)
                 ],
@@ -199,21 +197,21 @@ extension ExtendedQuestionFactory {
                 ],
                 l: 7),
             Question(
-                q: "Как назывался первый советский пленочный фотоаппарат?",
+                q: "В какое море впадает река Урал?",
                 a: [
-                    (answer: "Зенит", isCorrect: false),
-                    (answer: "Смена", isCorrect: false),
-                    (answer: "Зоркий", isCorrect: false),
-                    (answer: "ФЭД", isCorrect: true)
+                    (answer: "Азовское", isCorrect: false),
+                    (answer: "Чёрное", isCorrect: false),
+                    (answer: "Средиземное", isCorrect: false),
+                    (answer: "Каспийское", isCorrect: true)
                 ],
                 l: 7),
            Question(
-                q: "Сколько сантиметров в 1 ярде?",
+                q: "На что кладут руку члены английского общества лысых во время присяги?",
                 a: [
-                    (answer: "30,48", isCorrect: false),
-                    (answer: "81,44", isCorrect: false),
-                    (answer: "91,44", isCorrect: true),
-                    (answer: "96,84", isCorrect: false)
+                    (answer: "Баскетбольный мяч", isCorrect: false),
+                    (answer: "Апельсин", isCorrect: false),
+                    (answer: "Бильярдный шар", isCorrect: true),
+                    (answer: "Кокосовый орех", isCorrect: false)
                 ],
                 l: 7),
             Question(
@@ -235,12 +233,12 @@ extension ExtendedQuestionFactory {
                 ],
                 l: 8),
            Question(
-                q: "Назовите год отмены в России крепостного права.",
+                q: "Как Пётр Ильич Чайковский назвал свою серенаду для скрипки с оркестром си-бемоль минор?",
                 a: [
-                    (answer: "1871", isCorrect: false),
-                    (answer: "1861", isCorrect: true),
-                    (answer: "1864", isCorrect: false),
-                    (answer: "1854", isCorrect: false)
+                    (answer: "Флегматическая", isCorrect: false),
+                    (answer: "Меланхолическая", isCorrect: true),
+                    (answer: "Холерическая", isCorrect: false),
+                    (answer: "Сангвиническая", isCorrect: false)
                 ],
                 l: 8),
             Question(
@@ -253,12 +251,12 @@ extension ExtendedQuestionFactory {
                 ],
                 l: 9),
             Question(
-                q: "Какое звание является наивысшим в научной иерархии?",
+                q: "Какого ордена не было у первого советского космонавта Юрия Гагарина?",
                 a: [
-                    (answer: "Доцент", isCorrect: false),
-                    (answer: "Профессор", isCorrect: false),
-                    (answer: "Магистр", isCorrect: false),
-                    (answer: "Академик", isCorrect: true)
+                    (answer: "«Ожерелье Нила»", isCorrect: false),
+                    (answer: "«Крест Грюнвальда»", isCorrect: false),
+                    (answer: "«Плайя Хирон»", isCorrect: false),
+                    (answer: "«Орден двойного дракона»", isCorrect: true)
                 ],
                 l: 9),
            Question(
@@ -289,12 +287,12 @@ extension ExtendedQuestionFactory {
                 ],
                 l: 10),
            Question(
-                q: "Температура в 86 градусов по Фаренгейту соответствует по Цельсию температуре в:",
+                q: "Какое животное имеет второе название — кугуар?",
                 a: [
-                    (answer: "30 градусов+", isCorrect: true),
-                    (answer: "36 градусов", isCorrect: false),
-                    (answer: "40 градусов", isCorrect: false),
-                    (answer: "50 градусов", isCorrect: false)
+                    (answer: "Пума", isCorrect: true),
+                    (answer: "Оцелот", isCorrect: false),
+                    (answer: "Леопард", isCorrect: false),
+                    (answer: "Пантера", isCorrect: false)
                 ],
                 l: 10),
             Question(
@@ -318,7 +316,7 @@ extension ExtendedQuestionFactory {
            Question(
                 q: "В каком штате США расположен город Солт-Лейк-Сити - столица Зимней Олимпиады 2002 года?",
                 a: [
-                    (answer: "Юта+", isCorrect: true),
+                    (answer: "Юта", isCorrect: true),
                     (answer: "Висконсин", isCorrect: false),
                     (answer: "Колорадо", isCorrect: false),
                     (answer: "Нью-Хемпшир", isCorrect: false)
@@ -361,12 +359,12 @@ extension ExtendedQuestionFactory {
                 ],
                 l: 13),
             Question(
-                q: "Сколько куполов у собора Василия Блаженного?",
+                q: "Что в России 19 века делали в дортуаре?",
                 a: [
-                    (answer: "7", isCorrect: false),
-                    (answer: "10", isCorrect: true),
-                    (answer: "11", isCorrect: false),
-                    (answer: "13", isCorrect: false)
+                    (answer: "Ели", isCorrect: false),
+                    (answer: "Спали", isCorrect: true),
+                    (answer: "Ездили верхом", isCorrect: false),
+                    (answer: "Купались", isCorrect: false)
                 ],
                 l: 13),
            Question(
@@ -406,12 +404,12 @@ extension ExtendedQuestionFactory {
                 ],
                 l: 14),
             Question(
-                q: "Какой сигнал на российских морских пляжах означает запрет на купание?",
+                q: "Какой химический элемент назван в честь злого подземного гнома? ",
                 a: [
-                    (answer: "Черный шар", isCorrect: true),
-                    (answer: "Черный флаг", isCorrect: false),
-                    (answer: "Желтый шар", isCorrect: false),
-                    (answer: "Желтый флаг", isCorrect: false)
+                    (answer: "Кобальт", isCorrect: true),
+                    (answer: "Гафний", isCorrect: false),
+                    (answer: "Бериллий", isCorrect: false),
+                    (answer: "Теллур", isCorrect: false)
                 ],
                 l: 15),
             Question(
