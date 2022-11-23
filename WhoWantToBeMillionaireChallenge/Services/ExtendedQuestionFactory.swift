@@ -12,10 +12,11 @@ final class ExtendedQuestionFactory: QuestionFactoryProtocol {
     
     weak var delegate: QuestionFactoryDelegate?
     
-
+    init() {
+        questions = loadMockData()
+    }
     
     func requestNextQuestion(level: Int) {
-        questions = loadMockData()
         let question = questions.filter { $0.level == level }.randomElement()
         delegate?.didRecieveNextQuestion(self, question: question)
     }
