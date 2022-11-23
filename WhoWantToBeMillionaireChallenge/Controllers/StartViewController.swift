@@ -66,7 +66,9 @@ extension StartViewController {
     @objc func playButtonTapped(sender: UIButton) {
         print("Начали играть!")
         let vc = GameViewContoller()
-        vc.questionFactory = QuestionFactory(delegate: vc)
+        let factory = ExtendedQuestionFactory()
+        factory.delegate = vc
+        vc.questionFactory = factory
         navigationController?.pushViewController(vc, animated: true)
     }
     
